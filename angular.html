@@ -6,6 +6,8 @@
 </head>
 <body>
 	<div ng-controller="CtrlApp">
+
+		<input type="text" ng-model="nome">
 		
 		<h1>{{nome}}</h1>
 		<h4>{{cidade}}</h4>
@@ -24,6 +26,9 @@
 		var CtrlApp = function($scope) {
 			$scope.nome = "Thiago";
 			$scope.cidade = "Recife - Pernambuco";
+			$scope.$watch('nome', function() {
+				console.log("Oi " + $scope.nome);
+			});
 		};
 
 		var CtrlApp2 = function($scope) {
