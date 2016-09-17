@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="CtrlApp">
+
+		<input type="text" ng-model="nome" ng-change="loggar()">
+		
+		<h1>{{nome}}</h1>
+		<h4>{{cidade}}</h4>
+
+	</div>
+
+	<script>
+		var myApp = angular.module('app', []);
+		var CtrlApp = function($scope) {
+			$scope.nome = "Thiago";
+			$scope.cidade = "Recife - Pernambuco";
+
+			$scope.loggar = function() {
+				alert("123");
+			};
+		};
+
+		myApp.controller('CtrlApp', CtrlApp);
+	</script>
+</body>
+</html>
